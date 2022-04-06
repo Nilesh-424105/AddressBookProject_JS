@@ -1,0 +1,50 @@
+[
+    {
+        "firstName": "Ravindra",
+        "lastName": "Patil",
+        "landmark": "Amalner",
+        "city": "Jalgaon",
+        "state": "Maharastra",
+        "pinCode": "451236",
+        "phoneNumber": "91 9654852365",
+        "email": "Ravi456@gmail.com",
+        "gender": "Male",
+        "profession": "Designer"
+    },
+    {
+        "firstName": "Nilesh",
+        "lastName": "Kotkar",
+        "landmark": "Batsar",
+        "city": "Bhadgaon",
+        "state": "Maharastra",
+        "pinCode": "424105",
+        "phoneNumber": "91 8766483622",
+        "email": "nileshkotkar1996@gmail.com",
+        "gender": "Male",
+        "profession": "Developer"
+    },
+    {
+        "firstName": "Jayesh",
+        "lastName": "Patil",
+        "landmark": "Deopur",
+        "city": "Dhule",
+        "state": "Maharastra",
+        "pinCode": "456258",
+        "phoneNumber": "91 7745852365",
+        "email": "jayesh8745@gmail.com",
+        "gender": "Male",
+        "profession": "Designer"
+    },
+    {
+        "firstName": "Suraj",
+        "lastName": "Komane",
+        "landmark": "Karmad",
+        "city": "Baramati",
+        "state": "Maharastra",
+        "pinCode": "456852",
+        "phoneNumber": "91 8523625856",
+        "email": "suraj8548@gmail.com",
+        "gender": "Male",
+        "profession": "Developer"
+    }
+]
