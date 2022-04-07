@@ -32,7 +32,7 @@ while (flag) {
             break;
         case 6:
             flag = false;
-            console.log("Exit From AddressBook")
+            console.log("Exit From AddressBookManagement Program")
             break;
         default:
             console.log("You have entered invalid input!");    
