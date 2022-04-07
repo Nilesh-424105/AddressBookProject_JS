@@ -46,5 +46,17 @@
         "email": "suraj8548@gmail.com",
         "gender": "Male",
         "profession": "Developer"
+    },
+    {
+        "firstName": "Rahul",
+        "lastName": "Gupta",
+        "landmark": "Bandra",
+        "city": "Mumbai",
+        "state": "Maharastra",
+        "pinCode": "456852",
+        "phoneNumber": "91 8654123625",
+        "email": "rahul56@gmail.com",
+        "gender": "Male",
+        "profession": "Engineer"
     }
 ]

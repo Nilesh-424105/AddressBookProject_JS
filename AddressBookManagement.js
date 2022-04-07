@@ -5,16 +5,17 @@ let addressBook = new AddressBook();
 flag = true;
 
 while (flag) {
+    console.log("Welcome to AddressbookManagement Program ")
     console.log("1. Insert contacts in Address Book");
     console.log("2. Display the list of contact");
     console.log("3. Edit contacts in Address Book");
     console.log("4. Delete contacts in Address Book");
-    console.log("5. to exit");
+    console.log("5. Search contacts in Address Book");
+    console.log("6. to exit");
     let option = parseInt(read.question("Enter your choise: "));
 
     switch(option) {
         case 1:
-            console.log("welcome to addressbook")
                 addressBook.insert();
             break;
         case 2:
@@ -27,6 +28,9 @@ while (flag) {
            addressBook.deleteContact();
             break;
         case 5:
+            addressBook.searchContact();
+            break;
+        case 6:
             flag = false;
             console.log("Exit From AddressBook")
             break;

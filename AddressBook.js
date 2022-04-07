@@ -69,7 +69,8 @@ class AddressBook {
 
     // read contact data
     readContact() {
-        return contactList
+        let myJson = readFileData();
+        return myJson
     }
 
     // Edit contact is in AddressBook
@@ -77,7 +78,8 @@ class AddressBook {
         let edit = read.question("Enter the Name Of The Contact would be Update: ");
         console.log(edit);
         // let contactToBeUpdated = contactList.findIndex(x => x.firstName == updateContact);
-        let option = (parseInt)(read.question("Pleaze Enter \n 1.FirstName \n 2.LastName \n 3.City \n 4.State \n 5.PinCode \n 6.PhoneNumber\n Enter Your Option: "));
+        let myJson = readFileData();
+        let option = (parseInt)(read.question("Pleaze Enter \n 1. FirstName \n 2. LastName \n 3. City \n 4. State \n 5. PinCode \n 6. PhoneNumber\n 7. Landmark\n 8. Email\n 9. Gender\n 10. Profession\n Enter Your Choise: "));
 
         switch (option) {
             case 1:
@@ -86,44 +88,69 @@ class AddressBook {
                 //  contactToBeUpdated.firstName;
                 //  console.log(updateContacts);
                 let fName = read.question("Enter the First Name Of The Contact: ");
-                let updateFName = read.question("plz enter the new First Name to be Change: ");
-                let fNameToBeUpdated = contactList.findIndex(x => x.firstName == fName)
-                contactList[fNameToBeUpdated].firstName = updateFName;
+                let updateFName = read.question("plz enter the updated First Name to be Change: ");
+                let fNameToBeUpdated = myJson.findIndex(x => x.firstName == fName)
+                myJson[fNameToBeUpdated].firstName = updateFName;
                 break;
             case 2:
                 let lName = read.question("Enter the Last Name Of The Contact: ");
-                let updateLName = read.question("plz enter the new Last Name to be change: ");
-                let lNameToBeUpdated = contactList.findIndex(x => x.lastName == lName)
-                contactList[lNameToBeUpdated].lastName = updateLName;
+                let updateLName = read.question("plz enter the updated Last Name to be change: ");
+                let lNameToBeUpdated = myJson.findIndex(x => x.lastName == lName)
+                myJson[lNameToBeUpdated].lastName = updateLName;
                 break;
             case 3:
                 let cityName = read.question("Enter the city Of The Contact: ");
-                let updateCity = read.question("plz enter the new city to be change: ");
-                let cityToBeUpdated = contactList.findIndex(x => x.city == cityName)
-                contactList[cityToBeUpdated].city = updateCity;
+                let updateCity = read.question("plz enter the updated city to be change: ");
+                let cityToBeUpdated = myJson.findIndex(x => x.city == cityName)
+                myJson[cityToBeUpdated].city = updateCity;
                 break;
             case 4:
                 let stateName = read.question("Enter the state Of The Contact: ");
-                let updateState = read.question("plz enter the new state to be change: ");
-                let stateToBeUpdated = contactList.findIndex(x => x.state == stateName)
-                contactList[stateToBeUpdated].state = updateState;
+                let updateState = read.question("plz enter the updated state to be change: ");
+                let stateToBeUpdated = myJson.findIndex(x => x.state == stateName)
+                myJson[stateToBeUpdated].state = updateState;
                 break;
             case 5:
                 let pin = read.question("Enter the pinCode Of The Contact: ");
-                let newPin = read.question("plz enter the new pinCode to be change: ");
-                let pinToBeUpdated = contactList.findIndex(x => x.pinCode == pin)
-                contactList[pinToBeUpdated].pinCode = newPin;
+                let newPin = read.question("plz enter the updated pinCode to be change: ");
+                let pinToBeUpdated = myJson.findIndex(x => x.pinCode == pin)
+                myJson[pinToBeUpdated].pinCode = newPin;
                 break;
             case 6:
                 let mob = read.question("Enter the PhoneNumber Of The Contact: ");
-                let newMob = read.question("plz enter the new PhoneNumber to be change: ");
-                let mobToBeUpdated = contactList.findIndex(x => x.phoneNumber == mob)
-                contactList[mobToBeUpdated].phoneNumber = newMob;
+                let newMob = read.question("plz enter the updated PhoneNumber to be change: ");
+                let mobToBeUpdated = myJson.findIndex(x => x.phoneNumber == mob)
+                myJson[mobToBeUpdated].phoneNumber = newMob;
+                break;
+            case 7:
+                let land = read.question("Enter the LandMark Of The Contact: ");
+                let newLand = read.question("plz enter the updated LandMark to be change: ");
+                let landmarkToBeUpdated = myJson.findIndex(x => x.landmark == land)
+                myJson[landmarkToBeUpdated].landmark = newLand;
+                break;
+            case 8:
+                let mail = read.question("Enter the Email Of The Contact: ");
+                let newMail = read.question("plz enter the updated Email to be change: ");
+                let emailToBeUpdated = myJson.findIndex(x => x.email == mail)
+                myJson[emailToBeUpdated].email = newMail;
+                break;
+            case 9:
+                let gen = read.question("Enter the Gender Of The Contact: ");
+                let newGender = read.question("plz enter the updated Gender to be change: ");
+                let genderToBeUpdated = myJson.findIndex(x => x.gender == gen)
+                myJson[genderToBeUpdated].gender = newGender;
+                break;
+            case 10:
+                let prof = read.question("Enter the Profession Of The Contact: ");
+                let newProfession = read.question("plz enter the updated Profession to be change: ");
+                let professionToBeUpdated = myJson.findIndex(x => x.profession == prof)
+                myJson[professionToBeUpdated].profession = newProfession;
                 break;
         }
+        writeFileData(myJson);
     }
 
-    // Delete Contact Data
+    // Delete Contact By FirstName
     deleteContact() {
         // let updateContact = read.question("Enter the First Name Of The Contact: ");
         // // let contactToBeUpdated = this.contactList.find(x.getFirstName() == updateContact);
@@ -150,6 +177,34 @@ class AddressBook {
         }
         writeFileData(myJson);
         console.log("Contact is deleted");
+    }
+
+    // Search Contact By City or State
+    searchContact() {
+        let myJson = readFileData();
+        let option = parseInt(read.question("Please Enter\n 1. Search by City\n 2. Search by State\n Enter your choice : "));
+
+        switch (option) {
+            case 1:
+                let city = read.question("Enter the City you want to search the person for : ");
+                myJson.forEach(contact => {
+                    if (contact.city == city) {
+                        console.log(contact);
+                    }
+                });
+                break;
+            case 2:
+                let state = read.question("Enter the State you want to search the person for : ");
+                myJson.forEach(contact => {
+                    if (contact.state == state) {
+                        console.log(contact);
+                    }
+                });
+                break;
+            default:
+                console.log("You have entered invalid input!");
+                break;
+        }
     }
 }
 
