@@ -26,7 +26,6 @@ class AddressBook {
         // Ability to add values to the AddressBook
         // var personData = new PersonalInformation();
         // var pattern = new Regpattern();
-
         // Ability to add user-defined values to the AddressBook
         // personData.firstName = pattern.checkRegexForName(read.question("Enter First Name: "));
         // if(((personData.firstName=(pattern.checkRegexForName(read.question("Enter First Name: ")) != true)))){
