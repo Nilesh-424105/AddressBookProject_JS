@@ -29,16 +29,12 @@ class AddressBook {
 
         // Ability to add user-defined values to the AddressBook
         // personData.firstName = pattern.checkRegexForName(read.question("Enter First Name: "));
-
-
         // if(((personData.firstName=(pattern.checkRegexForName(read.question("Enter First Name: ")) != true)))){
         //      pattern.checkRegexForName(read.question("Enter First Name: "));
-
         // }
         // else{
         //     console.log("Pleaze Enter First Name Again")
         //     personData.firstName = pattern.checkRegexForName(read.question("Enter First Name: "));
-
         // }
 
         // Ability to add user-defined values to the AddressBook
@@ -208,5 +204,5 @@ class AddressBook {
     }
 }
 
-// Exports AddressBook file is in AddressBookManager
+// Exports AddressBook file is in AddressBookManagement file
 module.exports = AddressBook;

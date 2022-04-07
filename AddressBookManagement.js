@@ -37,6 +37,5 @@ while (flag) {
         default:
             console.log("You have entered invalid input!");    
             break;
-
     }
 }
