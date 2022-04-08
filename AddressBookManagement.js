@@ -11,7 +11,8 @@ while (flag) {
     console.log("3. Edit contacts in Address Book");
     console.log("4. Delete contacts in Address Book");
     console.log("5. Search contacts in Address Book");
-    console.log("6. to exit");
+    console.log("6. Count contacts By City OR State in Address Book");
+    console.log("7. to exit");
     let option = parseInt(read.question("Enter your choise: "));
 
     switch(option) {
@@ -31,6 +32,9 @@ while (flag) {
             addressBook.searchContact();
             break;
         case 6:
+            addressBook.countContact();
+            break;
+        case 7:
             flag = false;
             console.log("Exit From AddressBookManagement Program")
             break;

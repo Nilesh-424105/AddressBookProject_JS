@@ -5,6 +5,7 @@ const read = require('readline-sync');
 var contactList = new Array();
 var personData = new PersonalInformation();
 const fs = require('fs');
+const { count } = require("console");
 
 // Read Data From Address.json file
 function readFileData() {
@@ -37,6 +38,7 @@ class AddressBook {
         // }
 
         // Ability to add user-defined values to the AddressBook
+        try {
         personData.firstName = read.question("Enter First Name: ");
         pattern.checkRegexForName(personData.firstName);
         personData.lastName = read.question("Enter Last Name: ");
@@ -60,6 +62,9 @@ class AddressBook {
         myJson.push(personData);
         writeFileData(myJson);
         return contactList;
+        }catch(e){
+            console.error(e);
+        }
     }
 
     // read contact data
@@ -174,14 +179,14 @@ class AddressBook {
         console.log("Contact is deleted");
     }
 
-    // Search Contact By City or State
+    // Search Contacts By City OR State
     searchContact() {
         let myJson = readFileData();
         let option = parseInt(read.question("Please Enter\n 1. Search by City\n 2. Search by State\n Enter your choice : "));
 
         switch (option) {
             case 1:
-                let city = read.question("Enter the City you want to search the person for : ");
+                let city = read.question("Enter the City you want to search the person By Same City : ");
                 myJson.forEach(contact => {
                     if (contact.city == city) {
                         console.log(contact);
@@ -189,7 +194,7 @@ class AddressBook {
                 });
                 break;
             case 2:
-                let state = read.question("Enter the State you want to search the person for : ");
+                let state = read.question("Enter the State you want to search the person By Same State : ");
                 myJson.forEach(contact => {
                     if (contact.state == state) {
                         console.log(contact);
@@ -199,6 +204,36 @@ class AddressBook {
             default:
                 console.log("You have entered invalid input!");
                 break;
+        }
+    }
+
+    // Count Number Of Contact By City OR State
+    countContact() {
+        let myJson = readFileData();
+        let option = (parseInt)(read.question("Pleaze Enter\n 1. Count Contact By City\n 2. Count Contact By State\n Enter Your Choise: "));
+        let count = 0;
+
+        switch(option) {
+            case 1:
+                let city = read.question("Enter the City You Want To Count Person By Same City: ");
+                myJson.forEach(contact => {
+                    if(contact.city == city){
+                        count++;
+                    }
+                });
+                console.log("Number of Contacts By Same City is: " ,count);
+                break;
+            case 2:
+                let state = read.question("Enter the State You want to Count Person By Same State: ");
+                myJson.forEach(contact => {
+                    if(contact.state == state) {
+                        count++;
+                    }
+                });
+                console.log("Number of Contacts By Same State is: " ,count);
+                break;
+            default :
+                console.log("You have Enter Invalid Input!")
         }
     }
 }
